@@ -1,0 +1,14 @@
+<p-panel header="Header">
+    <ng-container *ngIf="questions[currentQuestionIndex] as currentQuestion">
+
+    <p>
+        {{currentQuestion.question}}?
+    </p>
+
+    <app-answers [question]="currentQuestion" (answerClick)="onAnswerClick($event)"
+    [currentAnswerIndex]="currentAnswerIndex" [wrongAnswers]="wrongAnswers"></app-answers>
+</ng-container>
+<div class="card flex justify-content-center gap-3 row-gap-3 p-1">
+<p-button label="Next Question" (click)="nextQuestion()"></p-button>
+</div>
+</p-panel>
